@@ -2,7 +2,13 @@
 
 body{
     font-family: "IBM Plex Sans";
-    ;text-align: center;
+    color: #191919;
+    background-color: #FBFBFB;
 }
 
-
+.interface{
+    border:  4px solid #191919;
+    width: 50%;
+    position: static;
+    margin-left: 200px;
+}
