@@ -3,14 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Typescript Projekt</title>
     <!--ACHTUNG - DAS GEHT NUR WEGEN VITE! IN "ECHT" KANN KEIN TS IM BROWSER AUSGEFÜHRT WERDEN -->
     <script defer type="module" src="/src/index.ts"></script>
+    <link rel="stylesheet" href="/src/styles/styles.css"/>
   </head>
 
   <body>
-    <img class="small-image" src="/jslogo.png" alt="JavaScript Logo" />
-    <label for="myInput">Type something:</label>
-    <input name="myInput" type="text" id="myInput" />
+    <h1>Manschafts Manager</h1>
+    <p>Ein Tool, mit denen Trainer ihre Manschaften organsieren können!</p>
+    <button id="create">Mannschaft erstellen</button>
+      <form id="createTeam">
+        <br><label for="teamName">Name der Mannschaft: </label><br>
+        <input type = "text" id="teamName" name="teamName"><br><br> 
+        <button id="addPlayer">Teammitglied hinzufügen: </button>
+        <div>
+          <label for="addName">Name des Spielers: </label>
+          <input type = "text" id="addName" name="addName"> <br><br>
+
+          <label for="playerNumber">Spielernummer hinzufügen: </label>
+          <input type = "number" id="playerNumber" name="playerNumber"><br><br>
+
+          <label for="playerPosiion">Position des Spielers: </label>
+          <select id="playerPosition" name="Position">
+            <option value="default">~default</option>
+            <option value="Point Guard">Point Guard (PG)</option>
+            <option value="Shooting Guard">Shooting Guard (SG)</option>
+            <option value="Center">Center (C)</option>
+            <option value="Fast Forward">Small Forward (SF)</option>
+            <option value="Power Forward">Power Forward (PF)</option>
+          </select>
+
+          <label></label>
+
+        </div>
+
+      </form>
   </body>
 </html>
