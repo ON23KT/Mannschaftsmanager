@@ -11,16 +11,18 @@
 
   <body>
     <div class="interface">
-      <h1>Manschafts Manager</h1>
-      <p>Ein Tool, mit denen Trainer ihre Manschaften organisieren können!</p>
+      <h1>Mannschafts-Manager</h1>
+      <p>Ein Tool, mit denen Trainer ihre Mannschaften organisieren können!</p>
       <div id="create" class="button" role="button">Mannschaft erstellen</div>
-        <form id="createTeam">
-          <br><label for="teamName">Name der Mannschaft: </label><br>
-          <input type = "text" id="teamName" name="teamName"><br><br> 
-          <div id="addPlayer" class="button" role="button">Teammitglied hinzufügen</div>
+      <div class="Team" id="Team">
+        <br><label for="teamName">Name der Mannschaft: </label><br>
+        <input type = "text" id="teamName" name="teamName"><br><br>
+      </div>
+      <div id="addPlayer" class="button" role="button">Teammitglied hinzufügen</div>
+        <form id="createTeam" class="createTeam">
           <div class="Teammember">
             <label for="addName">Name des Spielers: </label>
-            <input type = "text" id="addName" name="addName"> <br><br>
+            <input type = "text" id="addName" name="addName"><br>
 
             <br><label for="Birthdate">Geburtsdatum: </label>
             <input type="date" id="Birthdate" name="Birthdate"><br><br>
@@ -36,7 +38,7 @@
               <option value="Center">Center (C)</option>
               <option value="Fast Forward">Small Forward (SF)</option>
               <option value="Power Forward">Power Forward (PF)</option>
-            </select><br> 
+            </select><br><br>
         </div>
         <div id="hinzufügen" class="button" role="button">hinzufügen</div>
       </form>

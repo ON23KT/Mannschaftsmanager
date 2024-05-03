@@ -5,21 +5,36 @@
 html{
     background-color: #FBFBFB;
 }
+
 body{
     font-family: "IBM Plex Sans";
     color: #191919;
     display: flex;
     justify-content: center;
+    flex-basis: 200px;
+}
+
+input{
+    background-color: #FBFBFB;
+    border: 2px solid #191919;
+}
+
+select{
+    background-color: #FBFBFB;
+    border: 2px solid #191919
 }
 
 .interface{
-    border:  4px solid #191919;
+    text-align: center;
     width: 50%;
     position: static;
+    padding: 20px 15px 20px 15px;
 }
 
 .button{
-    background-color: #E88D67;
+    background-color: #DD7230;
+    /* border: 3px solid #191919; */
+    color: #FBFBFB;
     font-weight: 500;
     display: inline-block;
     text-align: center;
@@ -27,3 +42,21 @@ body{
     padding: 5px 8px 5px 8px;
     border-radius: 5px;
 }
+
+.createTeam{
+    text-align: left;
+    background-color: #2E1F27;
+    color: #FBFBFB;
+    border-radius: 15px;
+    text-align: center;
+    padding: 15px 0px 15px 0px;
+
+}
+
+#addPlayer{
+    margin: 15px 0px 15px 0px;
+}
+
+
+
+
