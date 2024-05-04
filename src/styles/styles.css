@@ -11,7 +11,6 @@ body{
     color: #191919;
     display: flex;
     justify-content: center;
-    flex-basis: 200px;
 }
 
 input{
@@ -53,8 +52,13 @@ select{
 
 }
 
+.Team{
+    display: none;
+}
+
 #addPlayer{
     margin: 15px 0px 15px 0px;
+    display: none;
 }
 
 
