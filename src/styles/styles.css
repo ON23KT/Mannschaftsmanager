@@ -20,7 +20,7 @@ input{
 
 select{
     background-color: #FBFBFB;
-    border: 2px solid #191919
+    border: 2px solid #191919;
 }
 
 .interface{
@@ -40,7 +40,9 @@ select{
     margin: 5px;
     padding: 5px 8px 5px 8px;
     border-radius: 5px;
+    cursor: pointer;
 }
+ 
 
 .createTeam{
     text-align: left;
@@ -56,6 +58,35 @@ select{
     display: none;
 }
 
+.teamContainer{
+    margin: 40px 0px 40px 0px;
+    width: 100%;
+    background-color: #F2E2D2;
+    padding: 15px 15px 15px 15px;
+    align-self: center;
+    border-radius: 8px;
+    font-weight: 500;
+}
+
+.teamName{
+    background-color: #F2E2D2;
+    text-align: center;
+}
+
+#submitTeamName{
+    background-color: #DD7230;
+    font-family: "IBM Plex Sans";
+    color: #191919;
+    border: none;
+    color: #FBFBFB;
+    font-weight: 500;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+    padding: 5px 8px 5px 8px;
+    border-radius: 5px;
+    cursor: pointer;
+}
 #addPlayer{
     margin: 15px 0px 15px 0px;
     display: none;
