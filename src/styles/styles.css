@@ -66,11 +66,30 @@ select{
     align-self: center;
     border-radius: 8px;
     font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 .teamName{
     background-color: #F2E2D2;
     text-align: center;
+    margin-right: 10px;
+}
+
+.memberButton{
+    color: #FBFBFB;
+    display: inline-block;
+    background-color: #DD7230;
+    margin-left: auto;
+    padding: 3px 8px 3px 8px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.createTeam{
+    display: none;
 }
 
 #submitTeamName{

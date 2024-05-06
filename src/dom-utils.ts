@@ -4,4 +4,6 @@ export const create = document.querySelector("#create") as HTMLButtonElement;
 export const teamNameInput = document.querySelector("#teamName") as HTMLInputElement;
 export const submitTeamName = document.querySelector("#submitTeamName") as HTMLDivElement;
 export const myTeams = document.querySelector("#teamList") as HTMLDivElement;
-
+export const teamCon = document.querySelector(".teamContainer") as HTMLDivElement;
+export const createTeam = document.querySelector(".createTeam") as HTMLFormElement;
+export const addMember = document.querySelector(".memberButton") as HTMLButtonElement;

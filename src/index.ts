@@ -7,8 +7,9 @@ import { create } from './dom-utils';
 import { teamNameInput } from './dom-utils';
 import { submitTeamName } from './dom-utils';
 import { myTeams } from './dom-utils';
-
+import { createTeam } from './dom-utils';
 //Spieler hinzufügen
+
 
 // CSS IMPORT IN TS NUR ÜBER VITE MÖGLICH
 import './styles/styles.css';
@@ -25,9 +26,11 @@ import './styles/styles.css';
 //my Code
 
 create.addEventListener("click", () => {
-    if (TeamInput.style.display ="none")
+    if (TeamInput.style.display ="none"){
         TeamInput.style.display ="block";
         console.log("it worked");
+    }
+        
 });
 
 //speichern des Team Names
@@ -41,6 +44,23 @@ create.addEventListener("click", () => {
     renderTeams();
 });
 
+const createMemberButton = (team: Team) => {
+    const memberButton = document.createElement("div");
+        memberButton.className = "memberButton";
+        memberButton.textContent = "Spieler hinzufügen";
+        const plusMember = document.createElement("img");
+        plusMember.src = "./src/icon/plus.svg";
+
+        memberButton.addEventListener("click", () => {
+            if (createTeam.style.display = "none"){
+                createTeam.style.display = "block"
+            }
+            //localStorage
+            addMember(team);
+        })
+        memberButton.appendChild(plusMember);
+        return memberButton;
+} 
 
 const renderTeams = () => {
     const teams: Team[] = getTeams();
@@ -51,10 +71,28 @@ const renderTeams = () => {
         const teamName = document.createElement("span");
         teamName.className = "teamName";
         teamName.textContent = team.name;
+        const memberButton = createMemberButton(team);
+
+        // const addMemberButton = document.createElement ("div");
+        // addMemberButton.className = "memberButton";
+        // addMemberButton.textContent = "Spieler hinzufügen";
+        // const plusMember = document.createElement("img");
+        // plusMember.src = "./src/icon/plus.svg";
+
+        // addMemberButton.addEventListener("click", () => {
+        //     if (createTeam.style.display ="none")
+        //         createTeam.style.display ="block";
+        // });
+
 
         teamContainer.appendChild(teamName);
+        teamContainer.appendChild(memberButton);
+        // memberButton.appendChild(plusMember);
         myTeams.appendChild(teamContainer);
+
     }
 }
-
 renderTeams();
+
+
+
