@@ -108,7 +108,7 @@ select{
 }
 #addPlayer{
     margin: 15px 0px 15px 0px;
-    display: none;
+    display: inline-block;
 }
 
 
