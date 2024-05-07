@@ -14,6 +14,7 @@ import { addPlayer } from './dom-utils';
 import { addplayerButton } from './dom-utils';
 import { birthdate } from './dom-utils';
 import { playerNumber } from './dom-utils';
+import { Player } from './data/Player';
 
 //select Team
 import { selectTeam } from './dom-utils';
@@ -44,7 +45,16 @@ create.addEventListener("click", () => {
  submitTeamName.addEventListener("click", () => {
     const teamName : string = teamNameInput.value;
     const id : number = new Date().getTime();
-    const team = {id: id, name: teamName};
+
+    const player : Player = {
+        id: Math.floor(Math.random() * 10000),
+        name: addName.value,
+        birthdate: new Date(birthdate.value),
+        number: parseInt(playerNumber.value),
+        position: playerPosition.value
+    };
+
+    const team = {id: id, name: teamName, players: [player]};
 
     console.log("punkt")
     newTeam(team);
