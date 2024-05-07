@@ -3,7 +3,6 @@ import { Player } from "./Player";
 export type Team = {
     id: number;
     name: string;
-    players: Player[];
 };
 
 export const newTeam = (team: Team) => { 

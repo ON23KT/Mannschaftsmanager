@@ -92,6 +92,11 @@ select{
     display: none;
 }
 
+.playerInfo{
+    word-break: break-all;
+    white-space: pre-line;
+}
+
 #submitTeamName{
     background-color: #DD7230;
     font-family: "IBM Plex Sans";

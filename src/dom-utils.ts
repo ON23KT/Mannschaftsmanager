@@ -14,3 +14,4 @@ export const addplayerButton = document.querySelector("#addPlayerButton") as HTM
 export const birthdate = document.querySelector("#Birthdate") as HTMLInputElement;
 export const playerNumber = document.querySelector("#playerNumber") as HTMLInputElement;
 export const playerPosition = document.querySelector("#playerPosition") as HTMLSelectElement;
+export const teamContainer = document.querySelector (".teamContainer") as HTMLDivElement;

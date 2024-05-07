@@ -1,79 +1,68 @@
 export type Player= {
     id: number;
     name: string;
-    birthdate: Date;
+    birthdate: string;
     number: number;
     position: string;
+    teamId: string;
 }
 
-export const newName = (nameMember: Player) => {
-    const names = localStorage.getItem("names");
+export const newPlayer = (player: Player) => {
+    const players = localStorage.getItem("players");
 
-    if (names){
-        const nameObjects = JSON.parse(names);
-        console.log(nameObjects);
-        localStorage.setItem("names", JSON.stringify([...nameObjects, nameMember]));
+    if (players) {
+        const playerObjects = JSON.parse(players);
+        localStorage.setItem("players", JSON.stringify([...playerObjects, player]))
     } else {
-        localStorage.setItem("names", JSON.stringify([nameMember]));
+        localStorage.setItem("players", JSON.stringify([player]));
     }
+    // const names = localStorage.getItem("names");
+
+    // if (names){
+    //     const nameObjects = JSON.parse(names);
+    //     console.log(nameObjects);
+    //     localStorage.setItem("names", JSON.stringify([...nameObjects, player]));
+    // } else {
+    //     localStorage.setItem("names", JSON.stringify([player]));
+    // }
+
+    // const birthdates = localStorage.getItem("birthdate");
+
+    // if (birthdates){
+    //     const birthdateObjects = JSON.parse(birthdates);
+    //     console.log(birthdateObjects);
+    //     localStorage.setItem("birthdates", JSON.stringify([...birthdateObjects, player]));
+    // } else {
+    //     localStorage.setItem("birthdates", JSON.stringify([player]));
+    // }
+
+    // const numbers = localStorage.getItem("numbers");
+
+    // if (numbers){
+    //     const numberObjects = JSON.parse(numbers);
+    //     console.log(numberObjects);
+    //     localStorage.setItem("numbers", JSON.stringify([...numberObjects, player]));
+    // } else {
+    //     localStorage.setItem("numbers", JSON.stringify([player]));
+    // }
+
+    // const positions = localStorage.getItem("positions");
+
+    // if (positions){
+    //     const positionObjects = JSON.parse(positions);
+    //     console.log(positionObjects);
+    //     localStorage.setItem("positions", JSON.stringify([...positionObjects, player]));
+    // } else {
+    //     localStorage.setItem("positions", JSON.stringify([player]));
+    // } 
 }
 
-export const getNames = () => {
-    const names = localStorage.getItem("names");
-
-    return names ? JSON.parse(names) : [];
+export const getPlayer = () => {
+    const players = localStorage.getItem("players");
+    return players ? JSON.parse(players) : [];
 }
 
-export const newBirthdate = (playerBirthdate: Player) => {
-    const birthdates = localStorage.getItem("birthdate");
-
-    if (birthdates){
-        const birthdateObjects = JSON.parse(birthdates);
-        console.log(birthdateObjects);
-        localStorage.setItem("birthdates", JSON.stringify([...birthdateObjects, playerBirthdate]));
-    } else {
-        localStorage.setItem("birthdates", JSON.stringify([playerBirthdate]));
-    }
-}
-
-export const getBirthdate = () => {
-    const birthdates = localStorage.getItem("birthdates");
-
-    return birthdates ? JSON.parse(birthdates) : []; 
-}
-
-export const newNumber = (playerNumber: Player) => {
-    const numbers = localStorage.getItem("numbers");
-
-    if (numbers){
-        const numberObjects = JSON.parse(numbers);
-        console.log(numberObjects);
-        localStorage.setItem("numbers", JSON.stringify([...numberObjects, playerNumber]));
-    } else {
-        localStorage.setItem("numbers", JSON.stringify([playerNumber]));
-    }
-}
-
-export const getNumber = () => {
-    const numbers = localStorage.getItem("numbers");
-    
-    return numbers ? JSON.parse(numbers) : [];
-}
-
-export const newPosition = (playerPosition: Player) => {
-    const positions = localStorage.getItem("positions");
-
-    if (positions){
-        const positionObjects = JSON.parse(positions);
-        console.log(positionObjects);
-        localStorage.setItem("positions", JSON.stringify([...positionObjects, playerPosition]));
-    } else {
-        localStorage.setItem("positions", JSON.stringify([playerPosition]));
-    } 
-}
-
-export const getPositions = () => {
-    const positions = localStorage.getItem("positions");
-
-    return positions ? JSON.parse(positions) : [];
+export const getPlayerOfTeam = (teamId: string) => {
+    const players = getPlayer();
+    if (players) return players.filter((play: Player) => play.teamId === teamId);
 }
