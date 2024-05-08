@@ -37,14 +37,18 @@ create.addEventListener("click", () => {
 
 //speichern des Team Names
  submitTeamName.addEventListener("click", () => {
-    const teamName : string = teamNameInput.value;
-    const id : number = new Date().getTime();
-
-    const team = {id: id, name: teamName};
-
-    console.log("punkt")
-    newTeam(team);
-    renderTeams();
+    if (teamNameInput.value){
+        const teamName : string = teamNameInput.value;
+        const id : number = new Date().getTime();
+    
+        const team = {id: id, name: teamName};
+    
+        console.log("punkt")
+        newTeam(team);
+        renderTeams();
+    } else {
+        alert("Name des Teams fehlt");
+    }
 });
 
 const renderTeams = () => {
