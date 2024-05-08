@@ -69,6 +69,7 @@ select{
     display: flex;
     flex-direction: row;
     align-items: center;
+    justify-content: space-between;
 }
 
 .teamName{
@@ -77,6 +78,17 @@ select{
     margin-right: 10px;
 }
 
+.deleteTeam{
+    background-color: #DD7230;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+    padding: 5px 8px 5px 8px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #FBFBFB;
+    cursor: pointer;
+}
 .memberButton{
     color: #FBFBFB;
     display: inline-block;
@@ -105,11 +117,24 @@ select{
     align-items: center;
     padding: 5px 15px 5px 15px;
     align-self: center;
+    justify-content: space-between;
 }
 
 .playerInfo{
     word-break: break-all;
     white-space: pre-line;
+}
+
+.deletePlayer{
+    background-color: #DD7230;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+    padding: 5px 8px 5px 8px;
+    border-radius: 5px;
+    font-weight: 500;
+    color: #FBFBFB;
+    cursor: pointer;
 }
 
 .backButton{
@@ -122,6 +147,13 @@ select{
     padding: 5px 8px 5px 8px;
     border-radius: 5px;
     font-weight: 500;
+}
+
+.gif{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 #submitTeamName{
     background-color: #DD7230;

@@ -24,3 +24,12 @@ export const getTeams = () => {
 
     return teams ? JSON.parse(teams) : [];
 }
+
+export const deleteTeam = (id: number) => {
+    const teams = localStorage.getItem("teams");
+    if (teams){
+        const removeTeam = JSON.parse(teams);
+        localStorage.setItem("teams", JSON.stringify(removeTeam.filter((team: Team) => team.id !== id)));
+    }
+    
+}
