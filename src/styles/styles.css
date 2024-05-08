@@ -59,7 +59,7 @@ select{
 }
 
 .teamContainer{
-    margin: 40px 0px 40px 0px;
+    margin: 5px;
     width: 100%;
     background-color: #F2E2D2;
     padding: 15px 15px 15px 15px;
@@ -90,6 +90,21 @@ select{
 
 .createTeam{
     display: none;
+    
+}
+
+.playerContainer{
+    margin: 5px;
+    background-color: #F2E2D2;
+    text-align: left;
+    border-radius: 8px;
+    font-weight: 500;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 5px 15px 5px 15px;
+    align-self: center;
 }
 
 .playerInfo{
@@ -97,6 +112,17 @@ select{
     white-space: pre-line;
 }
 
+.backButton{
+    cursor: pointer;
+    color: #FBFBFB;
+    background-color: #6A7062;
+    display: inline-block;
+    text-align: center;
+    margin: 5px;
+    padding: 5px 8px 5px 8px;
+    border-radius: 5px;
+    font-weight: 500;
+}
 #submitTeamName{
     background-color: #DD7230;
     font-family: "IBM Plex Sans";

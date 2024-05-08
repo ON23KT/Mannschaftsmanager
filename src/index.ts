@@ -47,7 +47,6 @@ create.addEventListener("click", () => {
     renderTeams();
 });
 
-
 const renderTeams = () => {
     const teams: Team[] = getTeams();
     myTeams.innerHTML = "";
@@ -73,6 +72,7 @@ const renderTeams = () => {
     }
 
 }
+
 renderTeams();
 
 const teams = getTeams();
@@ -128,8 +128,14 @@ addplayerButton.addEventListener("click", () => {
     renderTeams();
 })
 
+const showTeams = () => {
+    renderTeams();
+}
 const renderPlayers = (team: Team) => {
+    const teams: Team[] = getTeams();
     const teamPlayer = getPlayerOfTeam(team.id.toString());
+
+    myTeams.innerHTML = "";
     for (const player of teamPlayer) {
         const playerContainer = document.createElement("div");
         playerContainer.className = "playerContainer";
@@ -137,7 +143,7 @@ const renderPlayers = (team: Team) => {
         playerInfo.className = "playerInfo";
 
         const member = document.createElement("p");
-        member.textContent = `Spieler: ${player.name},\n Geburtsdatum: ${player.birthdate}, \n Nummer: ${player.number},\n Position: ${player.position}`;
+        member.textContent = `Spieler: ${player.name},\n Geburtsdatum: ${player.birthdate}, \n Nummer: ${player.number},\n Position: ${player.position} \n Teams: ${team.name}`;
         
         playerInfo.appendChild(member);
         playerContainer.appendChild(playerInfo);  
@@ -146,4 +152,11 @@ const renderPlayers = (team: Team) => {
         myTeams.appendChild(playerContainer);   
     }
     console.log("render players wurde ausgeführt");
+
+    const backButton = document.createElement("div");
+    backButton.className = "backButton";
+    backButton.textContent = "Zurück zu den Teams";
+    backButton.onclick = showTeams;
+    myTeams.appendChild(backButton);
 }
+
