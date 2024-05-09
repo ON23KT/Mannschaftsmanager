@@ -14,7 +14,7 @@ import { addPlayer } from './dom-utils';
 import { addplayerButton } from './dom-utils';
 import { birthdate } from './dom-utils';
 import { playerNumber } from './dom-utils';
-import { Player, getPlayer, getPlayerOfTeam, newPlayer, deletePlayer } from './data/Player';
+import { Player, getPlayerOfTeam, newPlayer, deletePlayer } from './data/Player';
 
 //select Team
 import { selectTeam } from './dom-utils';
@@ -139,7 +139,6 @@ addplayerButton.addEventListener("click", () => {
         };
         console.log(selectedTeamId);
         
-    
         newPlayer(player);
     
         renderTeams();
@@ -177,12 +176,9 @@ const renderPlayers = (team: Team) => {
             event.stopPropagation();
             deletePlayer(player.id);
             renderPlayers(team);
-            playGif();
-
-           
+            playGif();   
         }
         playerContainer.appendChild(removePlayer);
-
     }
     console.log("render players wurde ausgeführt");
 
@@ -201,17 +197,15 @@ const playGif = () => {
     fetch(gif)
         .then(response => response.json())
         .then(content => {
-            // Das GIF-Element erstellen
             let gifImg = document.createElement("img");
             gifImg.className = "gif";
-            gifImg.src = content.data.images.downsized.url; // URL des GIFs aus der API-Antwort
-            gifImg.alt = content.data.title; // Alternativer Text für das GIF
+            gifImg.src = content.data.images.downsized.url; 
+            gifImg.alt = content.data.title; 
 
-            // Das GIF-Element in das Dokument einfügen
             document.body.appendChild(gifImg);
 
             setTimeout(() => {
-                gifImg.remove(); // Entfernt das GIF-Element aus dem Dokument
+                gifImg.remove(); 
             }, 2500);
         })
         .catch(err => {

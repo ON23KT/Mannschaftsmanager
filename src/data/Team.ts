@@ -1,5 +1,3 @@
-import { Player } from "./Player";
-
 export type Team = {
     id: number;
     name: string;
